@@ -8,6 +8,7 @@ public class Villa {
 	public Integer noOfRooms;	
 	public String type ;	
 	public String name;
+	
 	public Villa(Integer id, Integer noOfRooms, String name) {
 		super();
 		this.id = id;
@@ -16,7 +17,6 @@ public class Villa {
 		this.name = name;
 	}
 
-	
 
 	public String getName() {
 		return name;
