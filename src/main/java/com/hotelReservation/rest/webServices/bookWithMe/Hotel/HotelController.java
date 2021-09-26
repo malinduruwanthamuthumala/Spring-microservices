@@ -28,23 +28,24 @@ public class HotelController {
 
 
 	@GetMapping("/hotel")
-	public List<Villa> getAllHotels() {
+	public List<Hotel> getAllHotels() {
 		return hotelDaoService.getAllHotels();
 	}
 	
 	@GetMapping("/hotel/{id}")
-	public Villa getHotel(@PathVariable String id) {
-		Villa villa = hotelDaoService.findHotel(Integer.parseInt(id));
-		if (villa != null) {
-			return villa;
+	public Hotel getHotel(@PathVariable String id) {
+		Hotel hotel = hotelDaoService.findHotel(Integer.parseInt(id));
+		if (hotel != null) {
+			return hotel;
 		} else {
 			throw new VillaNotFoundException("id-" + id);
 		}
 	}
 	
 	@PostMapping("/hotel")
-	public ResponseEntity createHotel(@RequestBody Villa villa) {
-		Villa savedVilla = hotelDaoService.save(villa);
+	public ResponseEntity createHotel(@RequestBody Hotel hotel) {
+		//hotel factory should come here
+		Hotel savedVilla = hotelDaoService.save(hotel);
 		
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedVilla.getId()).toUri();
 		

@@ -2,18 +2,18 @@ package com.hotelReservation.rest.webServices.bookWithMe.Hotel;
 
 import com.hotelReservation.rest.shared.HotelTypes;
 
-public class Villa implements Hotel{
-
+public class INN implements Hotel {
 	public Integer id;	
 	public Integer noOfRooms;	
 	public String type ;	
 	public String name;
+	public String abc="sdfdsf";
 	
-	public Villa(Integer id, Integer noOfRooms, String name) {
+	public INN(Integer id, Integer noOfRooms, String name) {
 		super();
 		this.id = id;
 		this.noOfRooms = noOfRooms;
-		this.type =  HotelTypes.VILLA.value;
+		this.type =  HotelTypes.INN.value;
 		this.name = name;
 	}
 
@@ -56,11 +56,6 @@ public class Villa implements Hotel{
 	
 	@Override
 	public String toString() {
-		return "Villa [id=" + id + ", noOfRooms=" + noOfRooms + ", type=" + type + "]";
+		return "INN [id=" + id + ", noOfRooms=" + noOfRooms + ", type=" + type + "]";
 	}
-
-
-	
-	
-	
 }
