@@ -22,7 +22,7 @@ public class CustomizedExceptionResponseEntitiyHandler extends ResponseEntityExc
 	
 	}
 	
-	@ExceptionHandler(VillaNotFoundException.class)
+	@ExceptionHandler(HotelNotFoundException.class)
 	public final ResponseEntity<Object> handleVillaNotFoundException(Exception ex, WebRequest request) throws Exception {
 		ExceptionResponse exceptionResponse =	new ExceptionResponse(new Date(),ex.getMessage(),request.getDescription(false));
 		
