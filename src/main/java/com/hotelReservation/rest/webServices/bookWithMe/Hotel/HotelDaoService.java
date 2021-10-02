@@ -1,6 +1,7 @@
 package com.hotelReservation.rest.webServices.bookWithMe.Hotel;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -50,6 +51,19 @@ public class HotelDaoService {
 		} else {
 			return null;
 		}
+	}
+	
+	public Hotel deleteByID(Integer id) {
+		Iterator<Hotel> hotelIterator = listOfHotel.iterator();
+		
+		while(hotelIterator.hasNext()) {
+			Hotel hotel = hotelIterator.next();
+			if(hotel.getId() == id) {
+				hotelIterator.remove();
+				return hotel;
+			}
+		}
+		return null;
 	}
 
 }
