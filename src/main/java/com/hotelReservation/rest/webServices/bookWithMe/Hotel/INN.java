@@ -1,13 +1,17 @@
 package com.hotelReservation.rest.webServices.bookWithMe.Hotel;
 
+import javax.validation.constraints.Size;
+
 import com.hotelReservation.rest.shared.HotelTypes;
 
 public class INN implements Hotel {
 	public Integer id;	
 	public Integer noOfRooms;	
-	public String type ;	
+	public String type ;
+	
+	@Size(min=2,message="Name should have at least two charachters")
 	public String name;
-	public String abc="sdfdsf";
+
 	
 	public INN(Integer id, Integer noOfRooms, String name) {
 		super();

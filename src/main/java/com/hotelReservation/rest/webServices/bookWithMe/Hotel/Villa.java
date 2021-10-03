@@ -1,12 +1,18 @@
 package com.hotelReservation.rest.webServices.bookWithMe.Hotel;
 
+import javax.validation.constraints.Size;
+
 import com.hotelReservation.rest.shared.HotelTypes;
 
 public class Villa implements Hotel{
 
+	
 	public Integer id;	
+
 	public Integer noOfRooms;	
 	public String type ;	
+	
+	@Size(min=2)
 	public String name;
 	
 	public Villa(Integer id, Integer noOfRooms, String name) {
